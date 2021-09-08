@@ -1,0 +1,15 @@
+### MongoDB
+## MongoDBTemplate
+    (执行持久化操作前 注入MongoDB 将对象交给SpringBoot管理)
+    //注入MongoTemplate
+        @Autowired
+        MongoTemplate mongoTemplate;
+    # 添加
+        User user = new User()
+        user.setName("name");  * N
+        User user1 = mongoTemplate.insert(user);    //数据持久化之后回传数据对象
+    # 查询所有数据
+        List<User> all = userRepository.findAll();
+    # 根据ID查询下(findById)
+        User user = mongoTemplate.findById("611240a843bdbd00662b0b22",User.class);  //回传查询结果
+    #
